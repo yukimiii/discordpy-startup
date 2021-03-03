@@ -1,7 +1,9 @@
 from discord.ext import commands
+import discord
 import os
 import traceback
-
+# 接続に必要なオブジェクトを生成
+client = discord.Client()
 bot = commands.Bot(command_prefix='/')
 token = os.environ['DISCORD_BOT_TOKEN']
 
@@ -13,7 +15,7 @@ async def on_command_error(ctx, error):
     await ctx.send(error_msg)
 
 
-@bot.event
+@client.event
 async def on_reaction_add(reaction,user):
 	if reaction.emoji=="📧":
 		embed = discord.Embed(description=reaction.message.content)
