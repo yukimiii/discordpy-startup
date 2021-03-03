@@ -26,4 +26,4 @@ async def on_reaction_add(reaction,user):
 		await user.send(embed=embed)
 		# await user.send(reaction.message.content)
 
-client.run(TOKEN)
+client.run(token)
