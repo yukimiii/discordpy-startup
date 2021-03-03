@@ -13,7 +13,7 @@ async def on_command_error(ctx, error):
     await ctx.send(error_msg)
 
 
-@client.event
+@bot.event
 async def on_reaction_add(reaction,user):
 	if reaction.emoji=="📧":
 		embed = discord.Embed(description=reaction.message.content)
